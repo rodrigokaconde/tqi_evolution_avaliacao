@@ -21,8 +21,6 @@ public class LoanService {
         return loanRepository.save(loan);
     }
 
-    public List<Loan> ListLoan (){
-        return loanRepository.findBy();
-    }
+
 
 }

@@ -1,8 +1,12 @@
 package br.com.rfoliveira.clientapi.model;
 
 import lombok.Data;
+import org.hibernate.validator.constraints.br.CPF;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 
 @Data
 @Entity
@@ -11,31 +15,37 @@ public class Client {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
 
-    @Column(nullable = false)
+    @NotBlank(message = "value not informed")
     private String name;
 
-    @Column(nullable = false, unique = true)
+    @NotBlank(message = "value not informed")
+    @Email (message = "invalid value")
+    @Column(unique = true)
     private String email;
 
-    @Column(nullable = false)
+    @NotBlank(message = "value not informed")
     private String password;
 
-    @Column(nullable = false, unique = true)
+    @NotBlank(message = "value not informed")
+    @CPF (message = "invalid value")
+    @Column(unique = true)
+    //@Column(nullable = false, unique = true)
     private String cpf;
 
-    @Column(nullable = false, unique = true)
+    @NotBlank(message = "value not informed")
+    @Column(unique = true)
     private String rg;
 
-    @Column(nullable = false)
+    @Min(value = 0)
     private float remuneration;
 
-    @Column(nullable = false)
+    @NotBlank(message = "value not informed")
     private String street;
 
-    @Column(nullable = false)
+    @NotBlank(message = "value not informed")
     private String cep;
 
-    @Column(nullable = false)
+    @NotBlank(message = "value not informed")
     private String number;
 
 }
