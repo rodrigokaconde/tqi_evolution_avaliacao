@@ -1,4 +1,4 @@
-package br.com.rfoliveira.clientapi.validation;
+package br.com.rfoliveira.clientapi.validationLoan;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;

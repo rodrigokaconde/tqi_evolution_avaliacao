@@ -1,12 +1,11 @@
 package br.com.rfoliveira.clientapi.model;
 
-import br.com.rfoliveira.clientapi.validation.DateFirstLoan;
+import br.com.rfoliveira.clientapi.validationLoan.DateFirstLoan;
 import lombok.Data;
 
 import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
-import javax.validation.constraints.NotBlank;
 import java.time.LocalDate;
 
 @Data
@@ -23,8 +22,6 @@ public class Loan {
 
     @Min(value = 0)
     private float value;
-
-    private LocalDate requestDate;
 
     @DateFirstLoan
     private LocalDate firstInstallmentDate;
