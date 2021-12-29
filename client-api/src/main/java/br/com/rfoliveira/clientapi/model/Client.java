@@ -7,6 +7,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
+import java.util.List;
 
 @Data
 @Entity
@@ -47,6 +48,9 @@ public class Client {
 
     @NotBlank(message = "value not informed")
     private String number;
-
+//trablahando aqui
+    //@OneToMany(fetch = FetchType.EAGER, mappedBy = "client", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "client")
+    private List<Loan> loan;
 
 }

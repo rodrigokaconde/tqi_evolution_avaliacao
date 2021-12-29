@@ -1,15 +1,18 @@
 package br.com.rfoliveira.clientapi.controller;
 
 import br.com.rfoliveira.clientapi.model.Client;
+import br.com.rfoliveira.clientapi.model.response.LoanClientResponse;
 import br.com.rfoliveira.clientapi.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -33,5 +36,11 @@ public class ClientController {
             errors.put(((FieldError)error).getField(), error.getDefaultMessage());
         });
         return errors;
+    }
+
+    @GetMapping("/loans/{id}")
+    public ResponseEntity<List<LoanClientResponse>> listLoanClient (@PathVariable Integer id){
+        return clientService.listLoanClient(id);
+
     }
 }
