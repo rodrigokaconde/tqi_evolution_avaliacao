@@ -43,4 +43,10 @@ public class ClientController {
         return clientService.listLoanClient(id);
 
     }
+
+    @GetMapping("/login")
+    public ResponseEntity<Boolean> loginClient (@RequestParam String email, @RequestParam String password){
+        return clientService.loginClient(email, password);
+    }
+
 }

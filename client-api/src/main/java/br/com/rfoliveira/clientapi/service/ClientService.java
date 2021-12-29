@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ClientService {
@@ -38,5 +39,11 @@ public class ClientService {
         if(!loansClient.isEmpty())
             return ResponseEntity.ok().body(loansResponse);
         return ResponseEntity.notFound().build();
+    }
+
+    public ResponseEntity<Boolean> loginClient(String email, String password) {
+        Optional<Client> findClient = clientRepository.findByEmail(email);
+        Boolean valid = findClient.get().getPassword().equals(password);
+        return ResponseEntity.ok().body(valid);
     }
 }
