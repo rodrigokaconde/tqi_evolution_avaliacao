@@ -17,7 +17,7 @@ public class ClientApiApplication {
 	}
 
 	@Bean
-	public PasswordEncoder getPassordEncoder(){
+	public PasswordEncoder getPasswordEncoder(){
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		return encoder;
 	}
