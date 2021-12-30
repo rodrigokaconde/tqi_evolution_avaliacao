@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.com.rfoliveira</groupId>
-	<artifactId>client-api</artifactId>
+	<artifactId>tqi-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>client-api</name>
+	<name>tqi-api</name>
 	<description>Project for TQI Evolution</description>
 	<properties>
 		<java.version>11</java.version>
@@ -47,16 +47,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-swagger2</artifactId>
-			<version>3.0.0</version>
-		</dependency>
-		<dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-swagger-ui</artifactId>
-			<version>3.0.0</version>
 		</dependency>
 	</dependencies>
 
