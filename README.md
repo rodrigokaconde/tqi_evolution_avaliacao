@@ -57,7 +57,7 @@
 ```
 #### Login
 
-``` http://localhost:8085/client/login?email=toni@gmail.com&password=123456 ```
+``` http://localhost:8085/client/login?email=example@email.com&password=xxxxxx ```
 
 #### Return
 
